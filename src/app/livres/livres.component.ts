@@ -18,13 +18,21 @@ import { AuthService } from '../services/auth.service';
 
 
 
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { AfterViewInit,  ViewChild } from '@angular/core';
+import { MdbCarouselComponent } from 'mdb-angular-ui-kit/carousel';
+
+import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
+
+import { ImageSliderComponent } from '../image-slider/image-slider.component';
 
 
 
 @Component({
   selector: 'app-livres',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterOutlet, RouterModule, NgIf],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterOutlet, RouterModule, NgIf, RouterOutlet, MdbCarouselModule, CommonModule, FormsModule, ReactiveFormsModule, ImageSliderComponent, MatSlideToggleModule, NgbCarouselModule],
   templateUrl: './livres.component.html',
   styleUrl: './livres.component.css'
 })
@@ -65,6 +73,18 @@ export class LivresComponent implements OnInit {
     //API rest subscribe LIVRE
     this.chargerLivres();
     
+  }
+
+
+  
+  slides: any[] = [];
+
+  images = ["https://www.google.com/url?sa=i&url=https%3A%2F%2Fstock.adobe.com%2Fsearch%3Fk%3D%2522book%2Bbackground%2522&psig=AOvVaw0ScJCELVWnBBcrzRheKR0B&ust=1714175002523000&source=images&cd=vfe&opi=89978449&ved=2ahUKEwioq5HSxd6FAxVl3bsIHTaeBcIQjRx6BAgAEBY",
+   "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.dreamstime.com%2Fphotos-images%2Fbook.html&psig=AOvVaw0x-gaLsUY2ge7NX61XxQ4z&ust=1714175083438000&source=images&cd=vfe&opi=89978449&ved=2ahUKEwjs-9v4xd6FAxU1qv0HHb8vA1YQjRx6BAgAEBY", 
+   "https://static.vecteezy.com/system/resources/previews/041/425/724/non_2x/ai-generated-a-book-with-open-pages-flying-in-the-air-surrounded-by-other-books-photo.jpg"];
+  
+  onSlideChange(): void {
+    console.log('slide change');
   }
 
   //API rest subscribe LIVRE

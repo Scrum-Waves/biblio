@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 
 //Path
 import { apiURLconstuser } from '../app.config';
@@ -24,7 +24,7 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class AuthService implements OnInit{
 
   //API REST
   //apiURL: string = 'http://localhost:8085/userBackEnd/api/all';
@@ -69,6 +69,17 @@ export class AuthService {
     this.roles = [];
     this.users = [];
    }
+  ngOnInit(): void {
+     this.loggedUser = localStorage.getItem("loggedUser")|| '';
+    this.isloggedIn =  localStorage.getItem("isLoggedIn") ? true : false;
+    this.AdminOrUser = localStorage.getItem("isloggedIn") || '';
+
+    if (this.AdminOrUser === '' && this.loggedUser === '') {
+      localStorage.removeItem('loggedUser');
+      localStorage.removeItem('AdminOrUser');
+  }
+  
+  }
 
    /////////////////////////////////////////////////////////////////////////////////
 

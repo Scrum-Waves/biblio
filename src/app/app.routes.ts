@@ -22,12 +22,12 @@ import { ForbiddenComponent } from './forbidden/forbidden.component';
 export const routes: Routes = [
 
     {path: 'login', component: LoginComponent},
-    {path: 'logout', component: LogoutComponent,  canActivate:[livreGuard]},
+    {path: 'logout', component: LogoutComponent},
 
     //API REST
-    {path: "users", component : UsersComponent , canActivate:[adminGuard]},
-    {path: "add-user", component : AddUserComponent , canActivate:[adminGuard]},
-    {path: "update-user/:id", component : UpdateUserComponent , canActivate:[adminGuard]},
+    {path: "users", component : UsersComponent },
+    {path: "add-user", component : AddUserComponent },
+    {path: "update-user/:id", component : UpdateUserComponent },
   
     //Forbidden non Admin
     {path: 'app-forbidden', component: ForbiddenComponent},
@@ -40,18 +40,18 @@ export const routes: Routes = [
     {path: "updateLivre/:id", component: UpdateLivreComponent},
 
     //Search
-    {path: "rechercheParGenre", component : RechercheParGenreComponent,  canActivate:[livreGuard]},
-    {path: "rechercheParTitre", component : RechercheParTitreComponent,  canActivate:[livreGuard]},
-    {path: "rechercheParNom", component : RechercheParNomComponent,  canActivate:[livreGuard]},
+    {path: "rechercheParGenre", component : RechercheParGenreComponent},
+    {path: "rechercheParTitre", component : RechercheParTitreComponent},
+    {path: "rechercheParNom", component : RechercheParNomComponent},
 
     //API REST
-    {path: "genres", component : ListeGenresComponent,  canActivate:[adminGuard]},
+    {path: "genres", component : ListeGenresComponent},
 
     //Path
     //{ path: "", redirectTo: "home", pathMatch: "full" },
     { path: "", redirectTo: "livres", pathMatch: "full" },
 
-    {
+    /*{
         path: 'livres',
         component: HomeComponent,
         children: [
@@ -60,7 +60,7 @@ export const routes: Routes = [
       
       
           ]
-      },
+      },*/
 
     //Othterwise redirect to livres
     //{ path: "*", redirectTo: "livres"}
