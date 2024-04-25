@@ -1,0 +1,43 @@
+/* .card */
+.card {
+    --card-spacer-y: 10px;
+    --card-spacer-x: 10px;
+    --card-title-spacer-y: 15px;
+    --card-border-width: 1px;
+    --card-border-color: #ced4da;
+    --card-border-radius: 0.25rem;
+    --card-box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    --card-inner-border-radius: calc(0.25rem - 1px);
+    --card-cap-padding-y: 0.75rem;
+    --card-cap-padding-x: 1.25rem;
+    --card-cap-bg: #f8f9fa;
+    --card-cap-color: #495057;
+    --card-height: auto;
+    --card-color: inherit;
+    --card-bg: #fff;
+    --card-img-overlay-padding: 1.25rem;
+    --card-group-margin: 15px;
+  }
+  
+  /* .card-header */
+  .card-header {
+    --card-header-border-bottom-color: #ced4da;
+  }
+  
+  /* .card-footer */
+  .card-footer {
+    --card-footer-border-top-color: #ced4da;
+  }
+  
+  /* .card-header */
+  .card-header {
+    --card-header-border-width: 1px;
+    --card-header-border-color: #ced4da;
+  }
+  
+  /* .card-footer */
+  .card-footer {
+    --card-footer-border-color: #ced4da;
+    --card-footer-border-width: 1px;
+  }
+  

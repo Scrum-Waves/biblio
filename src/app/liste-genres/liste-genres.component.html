@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="card shadow mb-4">
+    <div class="card-body">
+        <div class="col-sm-4 col-md-4 col-lg-4 mb-4">
+            <app-update-genre  [genre]="updatedGen" 
+            (genreUpdated)= "genreUpdated($event)" 
+            [ajout]="ajout"></app-update-genre>
+
+            </div>
+            
+    <table class="table table-striped">
+    <thead>
+    <tr> <th style="text-align: center;">Id</th><th style="text-align: center;">Nom Genre</th><th style="text-align: center;">Descprition Genre</th> </tr>
+    </thead>
+    <tbody *ngFor="let gen of genres">
+    <tr>
+    <td>{{gen.idGen}}</td>
+    <td>{{gen.nomGen}}</td>
+    <td>{{gen.descriptionGen}}</td>
+    <td><a class="btn btn-success" (click)="updateGen(gen)" >Editer</a></td>
+    <td><a class="btn btn-danger" (click)="genreDelete(gen)">Supprimer</a></td>
+    </tr>
+    </tbody>
+    </table>
+    </div>
+    </div>
+    </div>
+    

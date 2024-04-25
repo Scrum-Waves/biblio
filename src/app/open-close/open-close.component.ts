@@ -6,17 +6,23 @@ import { RouterOutlet } from '@angular/router';
 import { MdbCarouselModule } from 'mdb-angular-ui-kit/carousel';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ImageSliderComponent } from './image-slider/image-slider.component';
-
-
+import { ImageSliderComponent } from '../image-slider/image-slider.component';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-open-close',
   standalone: true,
   imports: [RouterOutlet, MdbCarouselModule, CommonModule, FormsModule, ReactiveFormsModule, ImageSliderComponent, MatSlideToggleModule, NgbCarouselModule],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  templateUrl: './open-close.component.html',
+  styleUrl: './open-close.component.css'
 })
-export class AppComponent {
-  title = 'biblio';
+export class OpenCloseComponent {
+
+
+  slides: any[] = [];
+
+  images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
+  
+  onSlideChange(): void {
+    console.log('slide change');
+  }
 }

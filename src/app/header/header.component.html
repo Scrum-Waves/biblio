@@ -1,0 +1,93 @@
+<p>header works!</p>
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Dropdown button
+    </button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="#">Action</a></li>
+      <li><a class="dropdown-item" href="#">Another action</a></li>
+      <li><a class="dropdown-item" href="#">Something else here</a></li>
+    </ul>
+  </div>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <!-- Brand -->
+    <a class="navbar-brand" routerLink="/livres">Gestion Livres</a>
+
+
+
+
+    <!-- Links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/livres">Home</a>
+      </li>
+      <!-- Dropdown -->
+      <div class="dropdown">
+        <span class="dropdown-toggle  text-light" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Dropdown button
+        </span>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
+      </div>
+      <li class="nav-item dropdown" >
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          Livres
+        </a>
+        <div class="dropdown-menu" >
+          <a class="dropdown-item" routerLink="/add-livre" >Ajouter</a>
+          <a class="dropdown-item" href="#">Lister</a>
+          <a class="dropdown-item" routerLink="/rechercheParGenre" >Recherche Par Genre </a>
+          <a class="dropdown-item" routerLink="/rechercheParTitre" >Recherche Par Titre </a>
+          <a class="dropdown-item" routerLink="/rechercheParNom" >Recherche Par Auteur </a>
+          <a class="dropdown-item" routerLink="/genres" >Gestion des genres</a>
+        </div>
+      </li>
+    </ul>
+
+
+        <!--Add user-->
+        <ul class="navbar-nav ml-auto" >
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+              [Admin]
+            </a>
+            <div class="dropdown-menu">
+              
+              <a class="dropdown-item" routerLink="/users">List Users</a>
+              <a class="dropdown-item" routerLink="/add-user" >Add user</a>
+    
+            </div>
+          </li>
+        </ul>
+
+
+
+
+    <!-- Links -->
+    <!--<ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          [username]
+        </a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="#">login</a>
+          <a class="dropdown-item" href="#">logout</a>
+          <a class="dropdown-item" href="#">Profile</a>
+        </div>
+      </li>
+    </ul>-->
+    <!-- Links -->
+    <div class="navbar-nav ml-auto">
+
+      <a class="nav-link" routerLink="/login" >login</a>
+
+      <span class="nav-link" > ISM &nbsp; </span>
+      <a class="nav-link" routerLink="/logout" > logout</a>
+
+    </div>
+  </nav>
+  <!-- Bootstrap -->
+  <!--npm install autoprefixer@10.4.5 --save-exact-->

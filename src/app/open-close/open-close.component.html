@@ -1,0 +1,164 @@
+<div id="carouselExampleFade" class="carousel  slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="1000">
+        <img src="https://picsum.photos/id/1/900/500" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item" data-bs-interval="1000">
+        <img src="https://picsum.photos/id/2/900/500" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+            <h5>Third slide label</h5>
+            <p>Some representative placeholder content for the third slide.</p>
+          </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="1000">
+        <img src="https://picsum.photos/id/3/900/500" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+<p>open-close works!</p>
+<mat-slide-toggle>Toggle me!</mat-slide-toggle>
+<div
+style="display: flex; align-items: center; justify-content: center; height: 100vh;"
+>
+<app-image-slider [slides]="slides"></app-image-slider>
+</div>
+<!-- carousel -->
+	<ngb-carousel *ngIf="images">
+		<ng-template ngbSlide>
+			<div class="picsum-img-wrapper">
+				<img [src]="images[0]" alt="Random first slide" style="width: 100%; height: auto;" />
+			</div>
+			<div class="carousel-caption">
+				<h3>First slide label</h3>
+				<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+			</div>
+		</ng-template>
+		<ng-template ngbSlide>
+			<div class="picsum-img-wrapper">
+				<img [src]="images[1]" alt="Random second slide" />
+			</div>
+			<div class="carousel-caption">
+				<h3>Second slide label</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+			</div>
+		</ng-template>
+		<ng-template ngbSlide>
+			<div class="picsum-img-wrapper">
+				<img [src]="images[2]" alt="Random third slide" />
+			</div>
+			<div class="carousel-caption">
+				<h3>Third slide label</h3>
+				<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+			</div>
+		</ng-template>
+	</ngb-carousel>
+<!-- carousel -->
+
+
+
+<div class="container">
+  <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+</div>
+
+<div class="container">
+  <h1>My First App with Bootstrap</h1>
+  <div class="card">
+    <div class="card-header">
+      ISIMS
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">My First Test</h5>
+      <p class="card-text">Hello in our classroom</p>
+      <a href="#" class="btn btn-primary">Let's go</a>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <h1>My First App with Bootstrap</h1>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <button type="button" class="btn btn-primary">Button</button>
+  </div>
+</div>
+<!--
+
+  <mdb-carousel [controls]="true" (slideChange)="onSlideChange()">
+  <mdb-carousel-item>
+    <img
+      src="https://mdbcdn.b-cdn.net/img/new/slides/041.webp"
+      class="d-block w-100"
+      alt="..."
+    />
+  </mdb-carousel-item>
+  <mdb-carousel-item>
+    <img
+      src="https://mdbcdn.b-cdn.net/img/new/slides/042.webp"
+      class="d-block w-100"
+      alt="..."
+    />
+  </mdb-carousel-item>
+  <mdb-carousel-item>
+    <img
+      src="https://mdbcdn.b-cdn.net/img/new/slides/043.webp"
+      class="d-block w-100"
+      alt="..."
+    />
+  </mdb-carousel-item>
+</mdb-carousel>
+
+-->
+<div class="container">
+  <h1>My First App with Bootstrap</h1>
+<div class="card">
+  <img src="https://mdbcdn.b-cdn.net/img/new/standard/nature/184.webp" class="card-img-top" alt="Fissure in Sandstone"/>
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#!" class="btn btn-primary">Button</a>
+  </div>
+</div></div>
+
+
+
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+</div>
