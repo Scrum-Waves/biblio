@@ -10,8 +10,15 @@ import { RechercheParGenreComponent } from './recherche-par-genre/recherche-par-
 import { RechercheParTitreComponent } from './recherche-par-titre/recherche-par-titre.component';
 import { RechercheParNomComponent } from './recherche-par-nom/recherche-par-nom.component';
 import { ListeGenresComponent } from './liste-genres/liste-genres.component';
+import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
+import { livreGuard } from './livre.guard';
 
 export const routes: Routes = [
+
+    {path: 'login', component: LoginComponent},
+    {path: 'logout', component: LogoutComponent,  canActivate:[livreGuard]},
+
     //Path
     { path: "", redirectTo: "home", pathMatch: "full" },
     //{ path: "", redirectTo: "livres", pathMatch: "full" },
