@@ -38,7 +38,7 @@ export class AuthService {
   //apiURL3: string = 'http://localhost:8085/userBackEnd/api/logino';
   apiURL3: string = apiURLconstuser+'user/logino';
 
-  apiURL4: string = apiURLconstuser+'login';
+  apiURL4: string = apiURLconstuser+'user/login';
 
 
 
@@ -182,6 +182,7 @@ consulterUser(id: number): Observable<User> {
 
       consulterUserByEmail(email: string): Observable<User> {
         const url = `${this.apiURL2}me/${email}`;
+        console.log(this.http.get<User>(url));
         return this.http.get<User>(url);
       }
 

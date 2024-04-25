@@ -103,45 +103,57 @@ export class LoginComponent implements OnInit {
   
 
   onLoggedin() {
-    this.authService.login(this.user).subscribe({
-      next: (data) => {
 
-
-        this.authService.consulterUserByEmail(this.user.email).
-        subscribe( usr =>{
-        this.user = usr; console.log(usr);console.log(this.user);/*console.log('fvvdsgs',usr);*/ 
-      
-        this.loading = true;
-        this.authService.SignIn(this.user);
-        this.erreur = 0;
-        setTimeout(() => {this.router.navigate(['/livres'],)}, 1270);
-      
-      
-      }  ) ;
-
-        /*console.log(this.user);
-        let rrr = new Role();
-        rrr.idRole = 1;
-        rrr.nomRole = "Admin";
-        this.user.role = rrr;
-        this.user.username="Profil";
-        this.user.email ="speed@gmail.com";
-        this.user.enabled = true;*/
-
-        console.log(this.user.password );
-        //this.user.role.idRole=1;
-        //this.user.role.nomRole="Admin";
-        /*this.loading = true;
-        this.authService.SignIn(this.user);
-        this.erreur = 0;*/
-        
-        //this.router.navigate(['/']);
-        /*setTimeout(() => {this.router.navigate(['/users'],)}, 1270);*/
-      },
-      error: (err: any) => {
-        this.erreur = 1;
-      }
-    });
+    console.log(this.user.password);
+    this.authService.consulterUserByEmail(this.user.email).subscribe( usr =>{
+      this.user = usr; console.log(usr);console.log(this.user);/*console.log('fvvdsgs',usr);*/ 
+    
+      this.loading = true;
+      this.authService.SignIn(this.user);
+      this.erreur = 0;
+      setTimeout(() => {this.router.navigate(['/livres'],)}, 1270);
+    
+    
+    }  ) ;
+    //this.authService.login(this.user).subscribe({
+    //  next: (data) => {
+//
+//
+    //    this.authService.consulterUserByEmail(this.user.email).
+    //    subscribe( usr =>{
+    //    this.user = usr; console.log(usr);console.log(this.user);/*console.log('fvvdsgs',usr);*/ 
+    //  
+    //    this.loading = true;
+    //    this.authService.SignIn(this.user);
+    //    this.erreur = 0;
+    //    setTimeout(() => {this.router.navigate(['/livres'],)}, 1270);
+    //  
+    //  
+    //  }  ) ;
+//
+    //    /*console.log(this.user);
+    //    let rrr = new Role();
+    //    rrr.idRole = 1;
+    //    rrr.nomRole = "Admin";
+    //    this.user.role = rrr;
+    //    this.user.username="Profil";
+    //    this.user.email ="speed@gmail.com";
+    //    this.user.enabled = true;*/
+//
+    //    console.log(this.user.password );
+    //    //this.user.role.idRole=1;
+    //    //this.user.role.nomRole="Admin";
+    //    /*this.loading = true;
+    //    this.authService.SignIn(this.user);
+    //    this.erreur = 0;*/
+    //    
+    //    //this.router.navigate(['/']);
+    //    /*setTimeout(() => {this.router.navigate(['/users'],)}, 1270);*/
+    //  },
+    //  error: (err: any) => {
+    //    this.erreur = 1;
+    //  }
+    //});
   }
 
 

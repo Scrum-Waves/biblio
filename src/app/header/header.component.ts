@@ -11,14 +11,14 @@ import { NgIf } from '@angular/common';
 import { AuthService } from '../services/auth.service';
 import { Router } from '@angular/router';
 
-
+import { RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-header',
   standalone: true,
   providers: [AuthService],
-  imports: [MatSliderModule, MatToolbarModule, NgbNavItem, NgIf],
+  imports: [MatSliderModule, MatToolbarModule, NgbNavItem, NgIf, RouterLink],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })

@@ -2,13 +2,13 @@
 
 <div class="container">
     <div class="mt-4 mb-4">
-        <h2>Add new user :</h2>
+        <h2>Modify user :</h2>
         <div class="alert alert-success" *ngIf="submittted ">
-            <strong>Successfully added</strong>
+            <strong>Successfully modified</strong>
         </div>
     </div>
 
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="loginForm" (ngSubmit)="updateUser()">
         <!--<div hidden class="col-sm-2 col-md-2 col-lg-2 mb-4">
                 <label>ID User</label>
                 <input type="number" [(ngModel)]="newUser.iduser" name="iduser" class="form-control" min="1" step="1">
@@ -76,27 +76,7 @@
             </div>
         </div>
 
-        <!--<div class="form-group col-sm-4 col-md-4 col-lg-4 mb-4">
-            <label for="enabled">Enabled</label>
-
-            <div class="input-group" formControlName="enabled" >
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" type="radio" name="enabled" value="1">
-                <label class="form-check-label" [(ngModel)]="newUser.enabled"  checked>active</label>
-              </div>
-              <div class="form-check form-check-inline">
-                <input class="form-check-input" [(ngModel)]="newUser.enabled" type="radio" name="enabled"  value="0">
-                <label class="form-check-label" >Disable</label>
-            </div>
-            </div>
-        </div>-->
-        <!--<div class="form-group col-sm-4 col-md-4 col-lg-4 mb-4" >
-            <label for="enabled">Enabled</label>
-    
-            <div class="input-group">
-                <input type="number" [(ngModel)]="newUser.enabled" formControlName="enabled" name="enabled" class="form-control" value="1">
-            </div>
-        </div>-->
+        
 
         <div class="form-group col-sm-4 col-md-4 col-lg-4">
             <label>Role</label>
@@ -119,6 +99,6 @@
 
 
         <div class="col-sm-2 col-md-2 col-lg-2 mt-2">
-            <input type="submit" class="btn btn-primary" value="Add">
+            <input type="submit" class="btn btn-success" value="Modify">
         </div>
     </form>

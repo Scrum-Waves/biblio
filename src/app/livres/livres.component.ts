@@ -12,8 +12,9 @@ import { RouterOutlet } from '@angular/router';
 import { RouterModule } from '@angular/router';
 
 
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthService } from '../services/auth.service';
 
 
 
@@ -23,7 +24,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-livres',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterOutlet, RouterModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterOutlet, RouterModule, NgIf],
   templateUrl: './livres.component.html',
   styleUrl: './livres.component.css'
 })
@@ -33,7 +34,7 @@ export class LivresComponent implements OnInit {
   //livres !: string[]; //un tableau de chînes de caractères
 
   livres !: Livre[];
-  constructor( private livreService : LivreService, private router: Router) { 
+  constructor( private livreService : LivreService, private router: Router, public authService: AuthService) { 
     //this.livres = ["PC Asus", "Imprimante Epson", "Tablette Samsung"]; 
   
     /*this.livres = [

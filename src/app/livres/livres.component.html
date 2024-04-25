@@ -12,8 +12,8 @@
                         <th scope="col">&nbsp;Prix&nbsp;</th>
                         <th scope="col">&nbsp;Publication&nbsp;</th>
                         <th scope="col">&nbsp;Genre&nbsp;</th>
-                        <th scope="col1" >&nbsp;Delete&nbsp;</th>
-                        <th scope="col2" >&nbsp;Change&nbsp;</th>
+                        <th scope="col1" *ngIf="authService.isAdminVIP()">&nbsp;Delete&nbsp;</th>
+                        <th scope="col2" *ngIf="authService.isAdminVIP()">&nbsp;Change&nbsp;</th>
                     </tr>
                 </thead>
                 <tbody *ngFor="let l of livres">
@@ -29,8 +29,8 @@
                         <!--<td *ngIf="! l.genre;">Pas de genre</td>
                         <td *ngIf="l.genre;">{{l.genre.nomGen}}</td>-->
                         <td scope="row1" >{{l.genre.nomGen}}</td>
-                        <td><a class="btn btn-danger" (click)="supprimerLivre(l)" >Supprimer</a></td>
-                        <td><a class="btn btn-success" [routerLink]="['/updateLivre',l.idLivre]" >Modifier</a></td>    
+                        <td><a class="btn btn-danger" (click)="supprimerLivre(l)" *ngIf="authService.isAdminVIP()">Supprimer</a></td>
+                        <td><a class="btn btn-success" [routerLink]="['/updateLivre',l.idLivre]" *ngIf="authService.isAdminVIP()">Modifier</a></td>    
                 </tbody>
 
             </table>

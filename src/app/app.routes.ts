@@ -13,15 +13,26 @@ import { ListeGenresComponent } from './liste-genres/liste-genres.component';
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { livreGuard } from './livre.guard';
+import { UsersComponent } from './users/users.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
+import { AddUserComponent } from './add-user/add-user.component';
+import { adminGuard } from './admin.guard';
+import { ForbiddenComponent } from './forbidden/forbidden.component';
 
 export const routes: Routes = [
 
     {path: 'login', component: LoginComponent},
     {path: 'logout', component: LogoutComponent,  canActivate:[livreGuard]},
 
-    //Path
-    { path: "", redirectTo: "home", pathMatch: "full" },
-    //{ path: "", redirectTo: "livres", pathMatch: "full" },
+    //API REST
+    {path: "users", component : UsersComponent , canActivate:[adminGuard]},
+    {path: "add-user", component : AddUserComponent , canActivate:[adminGuard]},
+    {path: "update-user/:id", component : UpdateUserComponent , canActivate:[adminGuard]},
+  
+    //Forbidden non Admin
+    {path: 'app-forbidden', component: ForbiddenComponent},
+
+
 
 
     {path: "livres", component : LivresComponent},
@@ -29,15 +40,19 @@ export const routes: Routes = [
     {path: "updateLivre/:id", component: UpdateLivreComponent},
 
     //Search
-    {path: "rechercheParGenre", component : RechercheParGenreComponent},
-    {path: "rechercheParTitre", component : RechercheParTitreComponent},
-    {path: "rechercheParNom", component : RechercheParNomComponent},
+    {path: "rechercheParGenre", component : RechercheParGenreComponent,  canActivate:[livreGuard]},
+    {path: "rechercheParTitre", component : RechercheParTitreComponent,  canActivate:[livreGuard]},
+    {path: "rechercheParNom", component : RechercheParNomComponent,  canActivate:[livreGuard]},
 
     //API REST
-    {path: "genres", component : ListeGenresComponent},
+    {path: "genres", component : ListeGenresComponent,  canActivate:[adminGuard]},
+
+    //Path
+    //{ path: "", redirectTo: "home", pathMatch: "full" },
+    { path: "", redirectTo: "livres", pathMatch: "full" },
 
     {
-        path: 'home',
+        path: 'livres',
         component: HomeComponent,
         children: [
             { path: "", redirectTo: "test", pathMatch: "full" },
