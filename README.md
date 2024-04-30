@@ -1,4 +1,5 @@
 # Biblio
+![Ashampoo_Snap_Tuesday, April 30, 2024_11h50m22s_002_Chrome Legacy Window](https://github.com/Scrum-Waves/biblio/assets/74512793/c541d2a7-47a1-43b5-b1c4-51e1dcd43191)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.1.1.
 
