@@ -24,7 +24,7 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService implements OnInit{
+export class AuthService implements OnInit {
 
   //API REST
   //apiURL: string = 'http://localhost:8085/userBackEnd/api/all';
@@ -57,9 +57,7 @@ export class AuthService implements OnInit{
   roles !: Role[]; //un tableau de Role
 
 
-  public loggedUser !: string;
-  public isloggedIn: Boolean = false;
-  public AdminOrUser !: string;
+
 
 
 
@@ -69,16 +67,67 @@ export class AuthService implements OnInit{
     this.roles = [];
     this.users = [];
    }
+   
+   public loggedUser !: string;
+  public isloggedIn: Boolean = false;
+  public AdminOrUser !: string;
   ngOnInit(): void {
-     this.loggedUser = localStorage.getItem("loggedUser")|| '';
-    this.isloggedIn =  localStorage.getItem("isLoggedIn") ? true : false;
-    this.AdminOrUser = localStorage.getItem("isloggedIn") || '';
+          /*let isloggedin : string | null;
+      let loggedUser : string | null;
+      let AdminOrUser : string | null;
+      isloggedin = localStorage.getItem('isloggedIn');
+      loggedUser = localStorage.getItem('loggedUser');
+      AdminOrUser = localStorage.getItem('AdminOrUser');*/
+      //if (isloggedin!="true" || !loggedUser || !AdminOrUser )
+      //this.router.navigate(['/login']);
+      //else
+      //this.authService.setLoggedUserFromLocalStorage(loggedUser , AdminOrUser);
+    
+    
+    
+    //console.log(this.authService.loggedUser+ localStorage.getItem("loggedUser"));
+    
+    /*const storedUser = localStorage.getItem("loggedUser");*/
+    /*this.loggedUser = typeof storedUser === "string" ? storedUser : "";*/
+    //this.loggedUser = localStorage.getItem("loggedUser") || "";
 
-    if (this.AdminOrUser === '' && this.loggedUser === '') {
-      localStorage.removeItem('loggedUser');
-      localStorage.removeItem('AdminOrUser');
-  }
-  
+    if (typeof localStorage !== 'undefined') {
+      var storedValue = localStorage.getItem("loggedUser");
+      if (typeof storedValue === "string") {
+        this.loggedUser = storedValue;
+      } else {
+        this.loggedUser = "";
+      }
+    } else {
+      // Handle the case where localStorage is not available
+      this.loggedUser = ""; // or any other fallback value
+    }
+
+
+
+    //this.isloggedIn = localStorage.getItem("isLoggedIn") !== null ? true : false;
+    if (typeof localStorage !== 'undefined') {
+      this.isloggedIn = localStorage.getItem("isLoggedIn") === "true";
+    } else {
+      // Handle the case where localStorage is not available
+      // For example, you might set isloggedIn to a default value
+      this.isloggedIn = false;
+    }
+
+
+
+    //this.AdminOrUser = localStorage.getItem("AdminOrUser") || "";
+    if (typeof localStorage !== 'undefined') {
+      var storedValue = localStorage.getItem("AdminOrUser");
+      if (typeof storedValue === "string") {
+        this.AdminOrUser = storedValue;
+      } else {
+        this.AdminOrUser = "";
+      }
+    } else {
+      // Handle the case where localStorage is not available
+      this.AdminOrUser = ""; // or any other fallback value
+    }
   }
 
    /////////////////////////////////////////////////////////////////////////////////
@@ -117,7 +166,7 @@ export class AuthService implements OnInit{
   }*/
 
   ajouterUser(usr: User): Observable<User> {
-    return this.http.post<User>(this.apiURL2, usr);
+    return this.http.post<User>(this.apiURL2.slice(0, this.apiURL2.length - 1), usr);
   }
 
   /*
@@ -199,7 +248,7 @@ consulterUser(id: number): Observable<User> {
 
 
   updateUser(usr: User): Observable<User> {
-    return this.http.put<User>(this.apiURL2, usr);
+    return this.http.put<User>(this.apiURL2.slice(0, this.apiURL2.length - 1), usr);
   }
 
 
@@ -265,7 +314,9 @@ consulterUser(id: number): Observable<User> {
 
 
   
-    this.router.navigate(['/login']);
+    this.router.navigate(['/login']).then(() => {
+      window.location.reload();
+    });;
   }
   
   

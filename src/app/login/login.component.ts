@@ -51,7 +51,9 @@ export class LoginComponent implements OnInit {
               ) {
                 //ERROR TEST
                 //////////////////////Prevent logged user from login in page reload
-                if (this.authService.isAdmin()) {this.router.navigate(['/ColorGame']);}
+                if (this.authService.isAdmin()) {this.router.navigate(['/ColorGame']).then(() => {
+                  window.location.reload();
+                });;}
                 //ERROR TEST
                 }
 
@@ -111,7 +113,9 @@ export class LoginComponent implements OnInit {
       this.loading = true;
       this.authService.SignIn(this.user);
       this.erreur = 0;
-      setTimeout(() => {this.router.navigate(['/livres'],)}, 1270);
+      setTimeout(() => {this.router.navigate(['/home'],).then(() => {
+        window.location.reload();
+      });}, 1270);
     
     
     }  ) ;

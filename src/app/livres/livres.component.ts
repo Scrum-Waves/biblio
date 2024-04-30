@@ -42,6 +42,8 @@ export class LivresComponent implements OnInit {
   //livres !: string[]; //un tableau de chînes de caractères
 
   livres !: Livre[];
+
+  newLivre = new Livre();
   constructor( private livreService : LivreService, private router: Router, public authService: AuthService) { 
     //this.livres = ["PC Asus", "Imprimante Epson", "Tablette Samsung"]; 
   
@@ -112,8 +114,8 @@ export class LivresComponent implements OnInit {
 
   //API REST
   supprimerLivre(li: Livre) {
-    let conf = confirm("Etes-vous sûr ?");
-    if (conf)
+    //let conf = confirm("Etes-vous sûr ?");
+    //if (conf)
       this.livreService.supprimerLivre(li.idLivre).subscribe(() => {
         console.log("livre supprimé");
         this.SuprimerLivreDuTableau(li);

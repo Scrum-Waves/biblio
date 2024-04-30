@@ -7,6 +7,7 @@ export class Livre {
     auteurLivre !:string;
     prixLivre !: number;
     datePublication !: Date;
+    imageLivre !: string;
     genre !: Genre;
     }
     

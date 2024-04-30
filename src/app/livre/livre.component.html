@@ -1,0 +1,16 @@
+
+  <div class="card">
+    <img class="card-img-top" [src]="livre?.imageLivre" alt="{{ livre!.titreLivre }}">
+    <div class="card-body">
+      <h5 class="card-title">{{ livre!.titreLivre }}</h5>
+      <p class="card-text">By {{ livre!.auteurLivre }}</p>
+      <hr>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><strong>ISBN:</strong> {{ livre!.isbnLivre }}</li>
+        <li class="list-group-item"><strong>Genre:</strong> {{ livre!.genre!.nomGen }}</li>
+        <li class="list-group-item"><strong>Price:</strong> {{ livre!.prixLivre }}</li>
+        <li class="list-group-item"><strong>Published:</strong> {{ livre!.datePublication }}</li>
+      </ul>
+    </div>
+  </div>
+  

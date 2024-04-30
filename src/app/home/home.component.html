@@ -1,27 +1,148 @@
 
-<div class="main-content">
-    <!--Header component-->
-    <app-header></app-header>
-    <!--Add Livre component-->
-    <app-add-livre></app-add-livre>
-    <!--Forbidden component-->
-    <app-forbidden></app-forbidden>
-    <!--Recherche Par Genre component-->
-    <app-recherche-par-genre></app-recherche-par-genre>
-    <!--Recherche Par Nom component-->
-    <app-recherche-par-nom></app-recherche-par-nom>
-    <!--Recherche Par Titre component-->
-    <app-recherche-par-titre></app-recherche-par-titre>
-    <!--Genres component-->
-    <app-liste-genres></app-liste-genres>
-    <!--Livres component-->
-    <app-livres></app-livres>
+
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1>Welcome to Bookshop</h1>
+                    <p>Discover a world of books.</p>
+                    <a href="#" class="btn btn-primary">Shop Now</a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="../../assets/images/a.webp" class="img-fluid" alt="Books">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Section End -->
 
 
-    <main>
-        <p>home works!</p>
-      <!-- Router outlet -->
-      <router-outlet></router-outlet>
 
-    </main>
-</div>
+
+
+
+
+
+
+
+
+    <!-- Featured Books Section -->
+    <section class="featured-books">
+      <div class="container">
+          <h2 class="text-center">Featured Books</h2>
+          <div class="row">
+              <div class="col-md-4">
+                  <div class="card">
+                      <img src="../../assets/images/aaa.webp" class="card-img-top" alt="Book 1">
+                      <div class="card-body">
+                          <h5 class="card-title">The 48 Laws of Power</h5>
+                          <p class="card-text">Robert Greene</p>
+                          <a href="#" class="btn btn-primary">Read Now</a>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-4">
+                  <div class="card">
+                      <img src="../../assets/images/aaa.webp" class="card-img-top" alt="Book 2">
+                      <div class="card-body">
+                          <h5 class="card-title">The life changing Magic of Tidying</h5>
+                          <p class="card-text">Marie Kondo</p>
+                          <a href="#" class="btn btn-primary">Read Now</a>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-4">
+                  <div class="card">
+                      <img src="../../assets/images/aaa.webp" class="card-img-top" alt="Book 3">
+                      <div class="card-body">
+                          <h5 class="card-title">The Prince</h5>
+                          <p class="card-text">Nicolo Machiavel</p>
+                          <a href="#" class="btn btn-primary">Read Now</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!-- Featured Books Section End -->
+
+
+
+
+
+  <!-- Header -->
+  <header class="bg-dark text-light py-4">
+    <div class="container">
+      <h1 class="lead display-4 d-flex justify-content-center">Explore our collection of books</h1>
+      <p class="lead"></p>
+    </div>
+  </header>
+  <!-- Main Content -->
+  <main class="container my-5">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        <!-- Book Cards -->
+        <div *ngFor="let livre of livres" class="col">
+            <div class="card shadow book-card">
+                <img [src]="livre.imageLivre" class="card-img-top" alt="{{ livre.titreLivre }}">
+                <div class="card-body">
+                    <h5 class="card-title">{{ livre.titreLivre }}</h5>
+                    <p class="card-text">By {{ livre.auteurLivre }}</p>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>ISBN:</strong> {{ livre.isbnLivre }}</li>
+                        <li class="list-group-item"><strong>Genre:</strong> {{ livre.genre.nomGen }}</li>
+                        <li class="list-group-item"><strong>Price:</strong> {{ livre.prixLivre }} USD</li>
+                        <li class="list-group-item"><strong>Published:</strong> {{ livre.datePublication }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>About Us</h5>
+                    <p> Ahmed Jedidi A Software Engenering Student </p>
+                </div>
+                <div class="col-md-6">
+                    <h5>Contact Us</h5>
+                    <address>
+                        Sfax<br>
+                        Sakkiet Ezziet, Tunisia<br>
+                        Phone: 55 555 555
+                    </address>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <hr>
+                    <p class="text-center">&copy; 2024 Bookshop Ahmed Jedidi. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer End -->
+

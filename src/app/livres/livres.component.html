@@ -5,18 +5,21 @@
         <button type="button" data-bs-target="#carouselExampleFade" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
     <div class="carousel-inner">
-      <div class="carousel-item active" data-bs-interval="1000">
-        <img src="https://picsum.photos/id/1/900/500" class="d-block w-100" alt="...">
+      <div class="carousel-item active" data-bs-interval="2000">
+        <img src="../../assets/images/aaa.webp" class="d-block w-100" alt="...">
       </div>
-      <div class="carousel-item" data-bs-interval="1000">
-        <img src="https://picsum.photos/id/2/900/500" class="d-block w-100" alt="...">
+      <div class="carousel-item" data-bs-interval="2000">
+        <img src="../../assets/images/a.webp" class="d-block w-100" alt="...">
         <div class="carousel-caption d-none d-md-block">
             <h5>Third slide label</h5>
             <p>Some representative placeholder content for the third slide.</p>
           </div>
       </div>
-      <div class="carousel-item" data-bs-interval="1000">
-        <img src="https://picsum.photos/id/3/900/500" class="d-block w-100" alt="...">
+      <div class="carousel-item" data-bs-interval="2000">
+        <img src="../../assets/images/Image2.jpg" class="d-block w-100" alt="...">
+        <!--<video height="1000">
+          <source src="../../assets/images/media.mp4" type="video/mp4" />
+      </video>-->
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
@@ -38,6 +41,7 @@
                     <tr>
                         <th scope="col">&nbsp;&nbsp;&nbsp;id&nbsp;&nbsp;&nbsp;&nbsp;</th>   
                         <th scope="col">&nbsp;ISBN&nbsp;</th>
+                        <th scope="col">&nbsp;Cover&nbsp;</th>
                         <th scope="col">&nbsp;Titre&nbsp;</th>
                         <th scope="col">&nbsp;&nbsp;&nbsp;Auteur&nbsp;</th>
                         <th scope="col">&nbsp;Prix&nbsp;</th>
@@ -52,6 +56,7 @@
                         <!--Data Binding-->
                         <td scope="row">{{l.idLivre}}</td>
                         <td> {{l.isbnLivre}} </td>
+                        <td scope="row"> <img src="{{l.imageLivre}}" style="max-width: 100px;"> </td>
                         <td scope="row"> {{l.titreLivre}} </td>
                         <td> {{l.auteurLivre}} </td>
                         <td scope="row"> {{l.prixLivre}} </td>
@@ -60,7 +65,7 @@
                         <!--<td *ngIf="! l.genre;">Pas de genre</td>
                         <td *ngIf="l.genre;">{{l.genre.nomGen}}</td>-->
                         <td scope="row1" >{{l.genre.nomGen}}</td>
-                        <td><a class="btn btn-danger" (click)="supprimerLivre(l)" >Supprimer</a></td>
+                        <td><a class="btn btn-danger" (click)="newLivre= l;" data-bs-toggle="modal" data-bs-target="#exampleModal">Supprimer</a></td>
                         <td><a class="btn btn-success" [routerLink]="['/updateLivre',l.idLivre]" >Modifier</a></td>    
                 </tbody>
 
@@ -68,3 +73,41 @@
         </div>
     </div>
 </div>
+
+
+
+
+
+<!-----------------------------------------Popup modal Bootstrap NOT the Material Angular one---------------------------------------------------->
+
+
+
+<!-- Button trigger modal -->
+<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    case actuelle
+  </button>-->
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Supprimer Livre "{{newLivre.titreLivre}}"</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="alert alert-danger text-center">
+            <strong>Etes vous sur de supprimer ce livre?</strong>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-danger" (click)="supprimerLivre(newLivre) " data-bs-dismiss="modal">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+  

@@ -19,6 +19,7 @@
                         <tr>
                             <th scope="col">&nbsp;&nbsp;&nbsp;id&nbsp;&nbsp;&nbsp;&nbsp;</th>
                             <th scope="col">&nbsp;ISBN&nbsp;</th>
+                            <th scope="col">&nbsp;Cover&nbsp;</th>
                             <th scope="col">&nbsp;Titre&nbsp;</th>
                             <th scope="col">&nbsp;&nbsp;&nbsp;Auteur&nbsp;</th>
                             <th scope="col">&nbsp;Prix&nbsp;</th>
@@ -41,6 +42,7 @@
                             <!--Data Binding-->
                             <td scope="row">{{l.idLivre}}</td>
                             <td> {{l.isbnLivre}} </td>
+                            <td scope="row"> <img src="{{l.imageLivre}}" style="max-width: 100px;"> </td>
                             <td scope="row"> {{l.titreLivre}} </td>
     
                             <td> {{l.auteurLivre}} </td>
@@ -58,4 +60,4 @@
         </div>
     </div>
     
-    
+    <app-livres></app-livres>

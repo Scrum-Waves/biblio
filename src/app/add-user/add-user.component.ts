@@ -114,7 +114,9 @@ export class AddUserComponent implements OnInit {
     this.submittted = 1;
     console.log(this.submittted);
     //this.router.navigate(['/users']);
-    setTimeout(() => {this.router.navigate(['/users'],)}, 1270);
+    setTimeout(() => {this.router.navigate(['/users'],).then(() => {
+      window.location.reload();
+    });}, 1270);
     /*this.router.navigate(['/users']).then(() => {
                                                   window.location.reload();
                                                 });*/

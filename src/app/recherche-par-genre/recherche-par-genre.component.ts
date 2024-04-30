@@ -6,10 +6,12 @@ import { LivreService } from '../services/livre.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { LivresComponent } from '../livres/livres.component';
+
 @Component({
   selector: 'app-recherche-par-genre',
   standalone: true,
-  imports: [CommonModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, LivresComponent],
   templateUrl: './recherche-par-genre.component.html',
   styleUrl: './recherche-par-genre.component.css'
 })

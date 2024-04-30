@@ -103,9 +103,9 @@ export class AddLivreComponent implements OnInit {
     
     //Ou bien
     // reload   .then(() => { window.location.reload(); })
-    /*this.router.navigate(['livres']).then(() => {
+    this.router.navigate(['livres']).then(() => {
       window.location.reload();
-    });*/
+    });
   
   }
 

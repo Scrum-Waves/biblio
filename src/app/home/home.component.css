@@ -1,0 +1,242 @@
+    /* Custom CSS */
+    body {
+        background-color: #f8f9fa;
+      }
+  
+      .footer {
+        background-color: #343a40;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+      }
+  
+      .book-card {
+        transition: transform 0.3s ease;
+        border: 1px solid #dee2e6;
+        border-radius: 10px;
+      }
+  
+      .book-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+  
+      .book-card img {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        height: auto; /* Set height to auto to maintain aspect ratio */
+        object-fit: contain; /* Ensure the image is fully displayed */
+        max-height: 250px; /* Adjust maximum height as needed */
+      }
+  
+      .book-card .card-body {
+        padding: 1rem;
+      }
+  
+      .book-card .card-title {
+        font-size: 1rem; /* Adjust font size of the card title */
+        font-weight: bold;
+        color: #333;
+      }
+  
+      .book-card .card-text {
+        font-size: 0.9rem; /* Adjust font size of the card text */
+        color: #555;
+      }
+  
+      .book-card .list-group-item {
+        font-size: 0.8rem; /* Adjust font size of the list items */
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      /* Custom CSS for Bookshop Website */
+
+/* Navbar */
+.navbar {
+    background-color: #343a40 !important;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+    color: #fff !important;
+    margin-right: 15px;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ccc !important;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #f8f9fa;
+    padding: 100px 0;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Featured Books Section */
+.featured-books {
+    padding: 80px 0;
+}
+
+.featured-books h2 {
+    margin-bottom: 50px;
+}
+
+.card {
+    border: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-img-top {
+    height: 300px;
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #6c757d;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.btn-primary {
+    background-color: #007bff !important;
+    border-color: #007bff !important;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3 !important;
+    border-color: #0056b3 !important;
+}
+
+/* Footer */
+.footer {
+    padding: 50px 0;
+    color: #fff;
+}
+
+.footer h5 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.footer p {
+    font-size: 1rem;
+}
+
+.footer address {
+    font-style: normal;
+}
+
+.footer hr {
+    background-color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .card-img-top {
+        height: 200px;
+    }
+
+    .card-title {
+        font-size: 1.1rem;
+    }
+
+    .card-text {
+        font-size: 0.9rem;
+    }
+
+    .footer h5 {
+        font-size: 1.2rem;
+    }
+
+    .footer p {
+        font-size: 0.9rem;
+    }
+}

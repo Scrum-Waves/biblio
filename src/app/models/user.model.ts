@@ -7,3 +7,5 @@ export class User{
     enabled !: boolean;
     role !: Role;// []
 }
+
+export { Role };

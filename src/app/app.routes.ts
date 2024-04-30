@@ -11,18 +11,37 @@ import { RechercheParTitreComponent } from './recherche-par-titre/recherche-par-
 import { RechercheParNomComponent } from './recherche-par-nom/recherche-par-nom.component';
 import { ListeGenresComponent } from './liste-genres/liste-genres.component';
 import { LoginComponent } from './login/login.component';
-import { LogoutComponent } from './logout/logout.component';
+
 import { livreGuard } from './livre.guard';
 import { UsersComponent } from './users/users.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { adminGuard } from './admin.guard';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
+import { SignInComponent } from './sign-in/sign-in.component';
+import { SignOutComponent } from './sign-out/sign-out.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 export const routes: Routes = [
 
-    {path: 'login', component: LoginComponent},
-    {path: 'logout', component: LogoutComponent},
+    //Path
+    //{ path: "", redirectTo: "home", pathMatch: "full" },
+    { path: "", redirectTo: "livres", pathMatch: "full" },
+
+    {
+        path: 'home',
+        component: HomeComponent,
+        /*children: [
+            { path: "", redirectTo: "test", pathMatch: "full" },
+            { path: 'test', component: OpenCloseComponent },
+      
+      
+          ]*/
+      },
+
+    {path: 'login', component: SignInComponent/*LoginComponent*/},
+    {path: 'logout', component: SignOutComponent},
+    {path: 'signup', component: SignUpComponent},
 
     //API REST
     {path: "users", component : UsersComponent },
@@ -47,23 +66,10 @@ export const routes: Routes = [
     //API REST
     {path: "genres", component : ListeGenresComponent},
 
-    //Path
-    //{ path: "", redirectTo: "home", pathMatch: "full" },
-    { path: "", redirectTo: "livres", pathMatch: "full" },
 
-    /*{
-        path: 'livres',
-        component: HomeComponent,
-        children: [
-            { path: "", redirectTo: "test", pathMatch: "full" },
-            { path: 'test', component: OpenCloseComponent },
-      
-      
-          ]
-      },*/
 
     //Othterwise redirect to livres
     //{ path: "*", redirectTo: "livres"}
-    //Othterwise redirect to ColorGame
+    //Othterwise redirect to PageNotFound
     { path: "**" , component:PageNotFoundComponent }
 ];

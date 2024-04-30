@@ -98,7 +98,9 @@ export class UpdateUserComponent implements OnInit {
 
 
     this.submittted = 1;
-    setTimeout(() => {this.router.navigate(['/users'],)}, 3000);
+    setTimeout(() => {this.router.navigate(['/users'],).then(() => {
+      window.location.reload();
+    });}, 3000);
     //this.router.navigate(['/users']);
     /*this.router.navigate(['/users']).then(() => {
       window.location.reload();});*/

@@ -62,7 +62,9 @@ export class UpdateLivreComponent implements OnInit {
     this.router.navigate(['livres']);*/
     //API REST
     this.livreService.updateLivre(this.currentLivre).subscribe(liv => {
-      this.router.navigate(['livres']);
+      this.router.navigate(['livres']).then(() => {
+        window.location.reload();
+      });;
       },(error) => { alert("Problème lors de la modification !"); }
       );
     }
